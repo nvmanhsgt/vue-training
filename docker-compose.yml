@@ -1,0 +1,16 @@
+version: '3.6'
+
+services:
+  node:
+    container_name: 'training-node'
+    build: './docker/node'
+    ports:
+      - 8080:8080
+    tty: true
+    volumes:
+      - ./frontend/:/srv:rw
+      - ./frontend/node_modules:/srv/node_modules
+    working_dir: /srv
+    environment:
+      TZ: 'Asia/Ho_Chi_Minh'
+    command: bash -c "npm install && npm run serve"
