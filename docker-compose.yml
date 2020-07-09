@@ -13,4 +13,5 @@ services:
     working_dir: /srv
     environment:
       TZ: 'Asia/Ho_Chi_Minh'
+      CHOKIDAR_USEPOLLING: "true"
     command: bash -c "npm install && npm run serve"

@@ -1,7 +1,18 @@
-import HelloWorld from '../components/HelloWorld.vue';
+import FrontendLayout from '../components/FrontendLayout';
+import Top from '../components/Top';
 
 const routes = [
-  { path: '/', component: HelloWorld },
+  {
+    path: '/',
+    component: FrontendLayout,
+    children: [
+      {
+        path: '',
+        component: Top,
+        name: 'Top'
+      },
+    ],
+  },
 ];
 
 export default routes;
